@@ -1,30 +1,25 @@
 <template>
-    <div class="grid grid-rows-6 grid-cols-1 border-1 rounded-1.25">
+    <div class="flex gap-x-5">
         <div
-            class="w-12 h-12 flex justify-center items-center border-b-1 last:border-b-0 text-4.5 font-bold cursor-pointer hover:bg-indigo-500"
-            v-for="item in itemsPosition"
+            class="flex flex-col items-center gap-y-1.5"
+            v-for="item in items"
             :key="item.id"
-            @click="onGoToPosition(item)"
         >
-            {{ item.name }}
+            <div class="font-medium text-4.5">
+                {{ item.name }}
+            </div>
+
+            <List />
         </div>
     </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
-const itemsPosition = reactive([
-    { id: 1, name: 'EP' },
-    { id: 2, name: 'MP' },
-    { id: 3, name: 'CO' },
-    { id: 4, name: 'BTN' },
-    { id: 5, name: 'SB' },
-    { id: 6, name: 'BB' },
-])
+import List from '@/components/List/List.vue'
 
+import { itemsPosition } from '@/constants/itemsPosition.js'
 
-const onGoToPosition = (item) => {
-    console.log('onGoToPosition', item)
-}
+const items = ref(itemsPosition)
 </script>
