@@ -14,32 +14,40 @@ const positions = [
     BB,
 ]
 
-const itemsPosition = [
+const ACTIONS = {
+    OR: 1,
+    COLD_CALL: 2,
+    THREE_BET: 3,
+    VS_3_BET: 4,
+    FOUR_BET: 5,
+}
+
+const ACTIONS_ITEMS = [
     {
-        id: 1,
+        id: ACTIONS.OR,
         name: 'OR',
         positions
     },
     {
-        id: 2,
+        id: ACTIONS.COLD_CALL,
         name: 'COLD CALL',
         positions: [SB, BB]
     },
     {
-        id: 3,
+        id: ACTIONS.THREE_BET,
         name: '3 BET',
         positions
     },
     {
-        id: 4,
+        id: ACTIONS.VS_3_BET,
         name: 'VS 3 BET',
         positions
     },
     {
-        id: 5,
+        id: ACTIONS.FOUR_BET,
         name: '4 BET',
         positions
     }
 ]
 
-export { itemsPosition }
+export { ACTIONS_ITEMS, ACTIONS }

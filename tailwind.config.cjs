@@ -5,6 +5,7 @@ const colors = {
   current: 'currentColor',
   'white': '#ffffff',
   'indigo': {
+    '200': '#c7d2fe',
     '400': '#818cf8',
     '500': '#6366f1',
     '600': '#4f46e5',
@@ -47,6 +48,20 @@ module.exports = {
       borderWidth: {
         '1': '1px',
       },
+      width: {
+        '7.5': '1.875rem',
+        '6.5': '1.625rem',
+      },
+      height: {
+        '7.5': '1.875rem',
+        '6.5': '1.625rem',
+      },
+      gridTemplateRows: {
+        13: 'repeat(13, minmax(0, 1fr))'
+      },
+      gridTemplateColumns: {
+        13: 'repeat(13, minmax(0, 1fr))'
+      }
     },
   },
   variants: {

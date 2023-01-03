@@ -6,7 +6,7 @@
             v-for="item in items"
             :key="item.id"
             :style="{ gridRow: item.id }"
-            @mouseenter="onMouseenter"
+            @mouseenter="onMouseenter(item, $event)"
             @mouseleave="onMouseleave"
             @click="onGoToPosition(item)"
         >
@@ -16,24 +16,37 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 
-defineProps({
-    items: {
-        type: Array,
-        default: () => ([])
+const props = defineProps({
+    activeAction: {
+        type: Number,
+        default: -1
+    },
+    item: {
+        type: Object,
+        default: () => ({})
     }
 })
+
+const emits = defineEmits(['updateActiveAction', 'onMouseleave'])
+
+const items = computed(() => props.item.positions)
 
 const onGoToPosition = (item) => {
     console.log('onGoToPosition', item)
 }
 
-const onMouseenter = (item) => {
-    console.log('onMouseenter')
+const onMouseenter = (item, { target }) => {
+    const { id } = props.item
+
+    const positionElem = target.getBoundingClientRect()
+
+    emits('updateActiveAction', id, item, positionElem)
 }
 
-const onMouseleave = (item) => {
-    console.log('onMouseleave')
+const onMouseleave = () => {
+    emits('onMouseleave')
 }
 
 </script>

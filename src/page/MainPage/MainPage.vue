@@ -9,17 +9,62 @@
                 {{ item.name }}
             </div>
 
-            <List :items="item.positions" />
+            <List
+                :activeAction="activeAction"
+                :item="item"
+                @updateActiveAction="updateActiveAction"
+                @onMouseleave="onMouseleave"
+            />
         </div>
     </div>
+
+    <OpenRaiseDialog
+        v-if="ACTIONS.OR === activeAction"
+        :item="currentItem"
+        :popupPosition="popupPosition"
+        @onMouseenter="onMouseenter"
+    />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
 import List from '@/components/List/List.vue'
+import OpenRaiseDialog from '@/components/dialogs/OpenRaiseDialog/OpenRaiseDialog.vue'
 
-import { itemsPosition } from '@/constants/itemsPosition.js'
+import { ACTIONS_ITEMS, ACTIONS } from '@/constants/itemsPosition.js'
 
-const items = ref(itemsPosition)
+const items = ref(ACTIONS_ITEMS)
+const currentItem = ref({})
+
+const activeAction = ref(-1)
+
+const popupPosition = ref({})
+
+const timeoutId = ref(null)
+
+const updateActiveAction = (id, item = {}, positionElem = {}) => {
+    createPopupPosition(positionElem)
+    activeAction.value = id
+    currentItem.value = item
+}
+
+const createPopupPosition = ({ top, left, width }) => {
+    clearTimeout(timeoutId.value)
+
+    popupPosition.value = {
+        top: `73px`,
+        left: `${left + width + 10}px`
+    }
+}
+
+const onMouseleave = () => {
+    timeoutId.value = setTimeout(() => {
+        activeAction.value = -1
+    }, 200)
+}
+
+const onMouseenter = () => {
+    clearTimeout(timeoutId.value)
+}
 </script>
