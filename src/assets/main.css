@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:focus {
+    outline: none!important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+html {
+    @apply h-full;
+}
+
+body, #app {
+    @apply h-full p-0 m-0
+}
+
+.show-enter-active {
+    animation: show-in 0.2s;
+}
+.show-leave-active {
+    animation: show-in 0.2s reverse;
+}
+@keyframes show-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all 0.3s;
+}
+.list-enter, .list-leave-to{
+    opacity: 0;
+    transform: translateX(30px);
+}
+.list-move {
+    transition: transform 0.3s;
+}
+
+/********************** Notification ****************************/
+
+.vue-notification-group {
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.vue-notification-group .vue-notification-wrapper {
+    padding-bottom: 10px;
+}
+
+.vue-notification-wrapper .vue-notification-template {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.vue-notification-template .notification-content {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.vue-notification-template.info-bg {
+    background: #342D48;
+    color: #6F4FCC;
+}
+
+.vue-notification-template.error-bg {
+    background: #F06269;
+    color: #4F4961;
+}
+
+.vue-notification-template.success-bg {
+    background: #2EDD63;
+    color: #4F4961;
+}
+
+/********************** ScrollBar ****************************/
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar {
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background:#342D48;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:#5837B8;
+}
+
+
+
+.ps .ps__rail-y, .ps .ps__rail-x {
+    z-index: 20;
+}
+
+.ps .ps__thumb-y, .ps .ps__thumb-x {
+    background: #6F4FCC !important;
+    opacity: 1 !important;
+    z-index: 20;
+}
+
+.ps .ps__rail-y:hover,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x.ps--clicking {
+    background: #C4C4C4 !important;
+    opacity: 1 !important;
+    z-index: 20;
+}
+
+.dark .ps .ps__rail-y:hover,
+.dark .ps .ps__rail-y:focus,
+.dark .ps .ps__rail-y.ps--clicking,
+.dark .ps .ps__rail-x:hover,
+.dark .ps .ps__rail-x:focus,
+.dark .ps .ps__rail-x.ps--clicking {
+    background: #383839 !important;
+    opacity: 1 !important;
+    z-index: 20;
+}
+
+.dark .ps.mini .ps__rail-y,
+.dark .ps.mini .ps__rail-y:hover,
+.dark .ps.mini .ps__rail-y:focus,
+.dark .ps.mini .ps__rail-y.ps--clicking {
+    width: 6px!important;
+}
+
+.ps.mini .ps__thumb-y {
+    width: 6px!important;
+    right: 0!important;
+}
+
+
+.dark .ps.mini .ps__rail-x:hover,
+.dark .ps.mini .ps__rail-x:focus,
+.dark .ps.mini .ps__rail-x.ps--clicking {
+    height: 6px!important;
+}
+
+.ps.mini .ps__thumb-x {
+    width: 6px!important;
+    right: 0!important;
+}

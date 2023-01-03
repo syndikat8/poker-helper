@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex w-full m-auto">
         APP
     </div>
 </template>
