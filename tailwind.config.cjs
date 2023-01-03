@@ -4,6 +4,12 @@ const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   'white': '#ffffff',
+  'indigo': {
+    '400': '#818cf8',
+    '500': '#6366f1',
+    '600': '#4f46e5',
+    '900': '#312e81'
+  },
   'black': {
     '400': '#1a1a1a',
     DEFAULT: '#000000'
@@ -33,6 +39,13 @@ module.exports = {
         '4.5': '1.125rem',
         '6.5': '1.625rem',
         '11.5': '2.875rem',
+      },
+      borderRadius: {
+        '0.75': '0.1875rem',
+        '1.25': '0.313rem',
+      },
+      borderWidth: {
+        '1': '1px',
       },
     },
   },
