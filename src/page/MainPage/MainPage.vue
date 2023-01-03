@@ -9,7 +9,7 @@
                 {{ item.name }}
             </div>
 
-            <List />
+            <List :items="item.positions" />
         </div>
     </div>
 </template>
