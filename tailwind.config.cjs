@@ -4,6 +4,18 @@ const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   'white': '#ffffff',
+  'red': {
+    '100': '#fee2e2',
+    '600': '#dc2626',
+  },
+  'amber': {
+    '100': '#fef3c7',
+    '300': '#fcd34d'
+  },
+  'blue': {
+    '300': '#93c5fd',
+    '700': '#1d4ed8'
+  },
   'indigo': {
     '200': '#c7d2fe',
     '400': '#818cf8',

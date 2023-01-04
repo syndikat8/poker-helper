@@ -49,7 +49,7 @@ const updateActiveAction = (id, item = {}, positionElem = {}) => {
     currentItem.value = item
 }
 
-const createPopupPosition = ({ top, left, width }) => {
+const createPopupPosition = ({ left, width }) => {
     clearTimeout(timeoutId.value)
 
     popupPosition.value = {

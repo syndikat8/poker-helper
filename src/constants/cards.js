@@ -31,7 +31,7 @@ const ROW_2 = [
 ]
 const ROW_3 = [
     { name: 'AQo' },
-    { name: 'KQ' },
+    { name: 'KQo' },
     { name: 'QQ' },
     { name: 'QJs' },
     { name: 'QTs' },
