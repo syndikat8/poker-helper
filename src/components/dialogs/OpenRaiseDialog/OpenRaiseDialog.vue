@@ -2,6 +2,7 @@
     <WrapperDialog
         :popupPosition="popupPosition"
         @onMouseenter="onMouseenter"
+        @onMouseleave="onMouseleave"
     >
         <FlopZilla :item="item" />
     </WrapperDialog>
@@ -22,9 +23,13 @@ defineProps({
     }
 })
 
-const emits = defineEmits(['onMouseenter'])
+const emits = defineEmits(['onMouseenter', 'onMouseleave'])
 
 const onMouseenter = () => {
     emits('onMouseenter')
+}
+
+const onMouseleave = () => {
+    emits('onMouseleave')
 }
 </script>

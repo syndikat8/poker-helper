@@ -33,7 +33,7 @@ const styleClass = ({ name }) => {
 
     if (isActive) {
         return [
-            !s && !o && 'bg-blue-700',
+            !s && !o && 'bg-blue-700 text-white',
             s && 'bg-amber-300',
             o && 'bg-red-600',
         ]

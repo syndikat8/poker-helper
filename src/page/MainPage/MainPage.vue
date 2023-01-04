@@ -23,6 +23,7 @@
         :item="currentItem"
         :popupPosition="popupPosition"
         @onMouseenter="onMouseenter"
+        @onMouseleave="onMouseleave"
     />
 </template>
 
