@@ -4,11 +4,29 @@ const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   'white': '#ffffff',
+  'red': {
+    '100': '#fee2e2',
+    '600': '#dc2626',
+  },
+  'amber': {
+    '100': '#fef3c7',
+    '300': '#fde047'
+  },
+  'blue': {
+    '200': '#bae6fd',
+    '300': '#93c5fd',
+    '700': '#1d4ed8'
+  },
   'indigo': {
+    '200': '#c7d2fe',
+    '300': '#a5b4fc',
     '400': '#818cf8',
     '500': '#6366f1',
     '600': '#4f46e5',
     '900': '#312e81'
+  },
+  'green': {
+    DEFAULT: '#22c55e'
   },
   'black': {
     '400': '#1a1a1a',
@@ -47,6 +65,23 @@ module.exports = {
       borderWidth: {
         '1': '1px',
       },
+      spacing: {
+        '1px': '1px',
+      },
+      width: {
+        '7.5': '1.875rem',
+        '6.5': '1.625rem',
+      },
+      height: {
+        '7.5': '1.875rem',
+        '6.5': '1.625rem',
+      },
+      gridTemplateRows: {
+        13: 'repeat(13, minmax(0, 1fr))'
+      },
+      gridTemplateColumns: {
+        13: 'repeat(13, minmax(0, 1fr))'
+      }
     },
   },
   variants: {

@@ -9,17 +9,64 @@
                 {{ item.name }}
             </div>
 
-            <List :items="item.positions" />
+            <List
+                :activeAction="activeAction"
+                :item="item"
+                @updateActiveAction="updateActiveAction"
+                @onMouseleave="onMouseleave"
+            />
         </div>
     </div>
+
+    <component
+        :is="getComponent"
+        :item="currentItem"
+        :popupPosition="popupPosition"
+        @onMouseenter="onMouseenter"
+    />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 import List from '@/components/List/List.vue'
 
-import { itemsPosition } from '@/constants/itemsPosition.js'
+import { ACTIONS_ITEMS } from '@/constants/itemsPosition.js'
+import { GET_COMPONENT } from '@/constants/getComponent.js'
 
-const items = ref(itemsPosition)
+const items = ref(ACTIONS_ITEMS)
+const currentItem = ref({})
+
+const activeAction = ref(-1)
+
+const popupPosition = ref({})
+
+const timeoutId = ref(null)
+
+const getComponent = computed(() => GET_COMPONENT(activeAction.value))
+
+const updateActiveAction = (id, item = {}, positionElem = {}) => {
+    createPopupPosition(positionElem)
+    activeAction.value = id
+    currentItem.value = item
+}
+
+const createPopupPosition = ({ left, width }) => {
+    clearTimeout(timeoutId.value)
+
+    popupPosition.value = {
+        top: `73px`,
+        left: `${left + width + 10}px`
+    }
+}
+
+const onMouseleave = () => {
+    timeoutId.value = setTimeout(() => {
+        activeAction.value = -1
+    }, 200)
+}
+
+const onMouseenter = () => {
+    clearTimeout(timeoutId.value)
+}
 </script>
