@@ -55,12 +55,18 @@ const ACTIONS_ITEMS = [
     {
         id: ACTIONS.COLD_CALL,
         name: 'COLD CALL',
-        positions: [SB, BB],
+        positions: [],
     },
     {
         id: ACTIONS.THREE_BET,
         name: '3 BET',
-        positions: []
+        positions: [
+            { ...SB,
+                active: ['AA', 'KK', 'QQ', 'JJ', 'TT', 'AKs', 'AQs', 'AJs', 'ATs', 'KQs', 'KJs', 'KTs', 'A5s', 'AKo',  'KQo'],
+                vsStillAndEarlyPosItems: ['QJs', 'QTs', 'JTs', 'AQo', '99'],
+                onlyStillItems: ['88', 'A9s', 'A4s', 'AJo']
+            }
+        ]
     },
     {
         id: ACTIONS.VS_3_BET,

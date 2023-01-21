@@ -211,4 +211,14 @@ const CARDS = [
     ...ROW_13,
 ]
 
-export { CARDS }
+const CARDS_3BET = [
+    ...ROW_1,
+    ...ROW_2,
+    ...ROW_3,
+    ...ROW_4,
+    ...ROW_5,
+    ...ROW_6,
+    ...ROW_7,
+]
+
+export { CARDS, CARDS_3BET }

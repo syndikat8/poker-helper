@@ -10,18 +10,23 @@ const colors = {
   },
   'amber': {
     '100': '#fef3c7',
-    '300': '#fcd34d'
+    '300': '#fde047'
   },
   'blue': {
+    '200': '#bae6fd',
     '300': '#93c5fd',
     '700': '#1d4ed8'
   },
   'indigo': {
     '200': '#c7d2fe',
+    '300': '#a5b4fc',
     '400': '#818cf8',
     '500': '#6366f1',
     '600': '#4f46e5',
     '900': '#312e81'
+  },
+  'green': {
+    DEFAULT: '#22c55e'
   },
   'black': {
     '400': '#1a1a1a',
@@ -59,6 +64,9 @@ module.exports = {
       },
       borderWidth: {
         '1': '1px',
+      },
+      spacing: {
+        '1px': '1px',
       },
       width: {
         '7.5': '1.875rem',
