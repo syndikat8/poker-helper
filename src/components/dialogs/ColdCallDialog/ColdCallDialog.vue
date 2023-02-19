@@ -7,7 +7,6 @@
         <FlopZilla
             class="mb-5"
             :item="item"
-            :cards="CARDS_3BET"
         />
 
         <RulesList :rules="rules"/>
@@ -21,8 +20,7 @@ import WrapperDialog from '@/components/dialogs/WrapperDialog/WrapperDialog.vue'
 import FlopZilla from '@/components/FlopZilla/FlopZilla.vue'
 import RulesList from '@/components/List/RulesList.vue'
 
-import { CARDS_3BET } from '@/constants/cards.js'
-import { RULES_3BET } from '@/constants/rules/rules.js'
+import { RULES_COLD_CALL } from '@/constants/rules/rules.js'
 
 const props = defineProps({
     item: {
@@ -37,7 +35,7 @@ const props = defineProps({
 
 const emits = defineEmits(['onMouseenter', 'onMouseleave'])
 
-const rules = computed(() => RULES_3BET(props.item.id))
+const rules = computed(() => RULES_COLD_CALL(props.item.id))
 
 const onMouseenter = () => {
     emits('onMouseenter')

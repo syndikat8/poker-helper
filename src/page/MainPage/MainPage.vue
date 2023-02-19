@@ -23,6 +23,7 @@
         :item="currentItem"
         :popupPosition="popupPosition"
         @onMouseenter="onMouseenter"
+        @onMouseleave="onMouseleave"
     />
 </template>
 
@@ -31,7 +32,7 @@ import { computed, ref } from 'vue'
 
 import List from '@/components/List/List.vue'
 
-import { ACTIONS_ITEMS } from '@/constants/itemsPosition.js'
+import { ACTIONS_ITEMS } from '@/constants/position/itemsPosition.js'
 import { GET_COMPONENT } from '@/constants/getComponent.js'
 
 const items = ref(ACTIONS_ITEMS)
